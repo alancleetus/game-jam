@@ -3,3 +3,40 @@ html, body
 	margin:0px;
 	padding:0px;
 }
+
+#player
+{
+	background-color:red;
+	height:100px;
+	width:100px;
+	z-index:1;
+} 
+#gameWindow
+{
+
+	width:1000;
+	height:1000;
+	background-image: url("./assets/background/background.png");
+}
+
+#parallaxLayer1
+{
+	 position:absolute;
+    left:0;
+    top:0;
+	
+	width:1000px;
+	height:1000px;
+	background-image: url("./assets/background/layer2stars.png");
+}
+
+#parallaxLayer2
+{
+	 position:absolute;
+    left:0;
+    top:0;
+	
+	width:1000px;
+	height:1000px;
+	background-image: url("./assets/background/layer1stars.png");
+}
