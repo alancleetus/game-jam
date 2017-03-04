@@ -1,10 +1,14 @@
+<style>
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+</style>
+
 html, body
 {
 	margin:0px;
 	padding:0px;
 	height:100%;
 	width:100%;
-	
+	font-family: 'Press Start 2P', cursive;
 }
 
 #player
@@ -20,14 +24,15 @@ html, body
 	background-color:green;
 	height:100px;
 	width:100px;
+	margin-top:800px;
 } 
 
 #gameWindow
 {
 	position:absolute;
 	z-index:3;
-	width:1000;
-	height:1000;
+	width:1040;
+	height:1040;
 	
 	border:solid 20px white;
 
@@ -38,8 +43,8 @@ html, body
 
 #backgroundlayer
 {
-	background-image: url("./assets/background/background.png");
-	
+//	background-image: url("./assets/background/background.png");
+	background-color:#172027;
 	width:100%;
 	height:100%;
 }
@@ -80,4 +85,9 @@ html, body
 	color:white;
 	font-size:20px;
 	padding-top:10px;
+}
+
+.gameButtons
+{
+	background-color:rgba(0,0,0,0);
 }
