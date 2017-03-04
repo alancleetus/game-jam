@@ -9,34 +9,56 @@ html, body
 	background-color:red;
 	height:100px;
 	width:100px;
-	z-index:1;
+	z-index:3;
 } 
+
+#boulder
+{
+	background-color:green;
+	height:100px;
+	width:100px;
+} 
+
 #gameWindow
 {
-
+	position:absolute;
+	z-index:3;
 	width:1000;
 	height:1000;
-	background-image: url("./assets/background/background.png");
-}
+	
+	border:solid 20px white;
 
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}	
+
+#backgroundlayer
+{
+	background-image: url("./assets/background/background.png");
+	
+	width:100%;
+	height:100%;
+}
 #parallaxLayer1
 {
-	 position:absolute;
+	position:fixed;
     left:0;
     top:0;
 	
-	width:1000px;
-	height:1000px;
+	width:100%;
+	height:100%;
 	background-image: url("./assets/background/layer2stars.png");
+	z-index:2;
 }
 
 #parallaxLayer2
 {
-	 position:absolute;
+	position:fixed;
     left:0;
     top:0;
-	
-	width:1000px;
-	height:1000px;
+
+	width:100%;
+	height:100%;
 	background-image: url("./assets/background/layer1stars.png");
 }
