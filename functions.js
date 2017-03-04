@@ -32,7 +32,7 @@ function checkKey(e) {
 		mPlayer.moveRight();
 		
 	   //validate that player isn't already out of bounds, if so, move to end of right side
-	   if(!mPlayer.isOutsideRightBoundry()){
+	   if(mPlayer.isOutsideRightBoundry()){
 		   mPlayer.setToRightSideOfGameWindow();
 	   }
 	  
@@ -42,7 +42,7 @@ function checkKey(e) {
 	   // move player left
 	   mPlayer.moveLeft();
 	    //validate that player isn't already out of bounds, if so, move to end of right side
-	   if(!mPlayer.isOutsideLeftBoundry()){
+	   if(mPlayer.isOutsideLeftBoundry()){
 		   mPlayer.setToLeftSideOfGameWindow();
 	   }
     }

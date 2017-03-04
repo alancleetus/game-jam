@@ -2,7 +2,7 @@ class Player{
 	
 	
 	constructor(playerSelector,gameWindow){
-		this.player = $("#player");
+		this.player = $(playerSelector);
 		this.gameWindow = gameWindow;
 		this.health = 3;
 
@@ -35,7 +35,7 @@ class Player{
 	
 	 isOutsideRightBoundry(){
 		//player leftmargin + player width > game window width
-		return this.getLeftMargin() + this.getWidth() > this.gameWindow.getWidth();			
+		return (this.getLeftMargin() + this.getWidth()) > this.gameWindow.getWidth();			
 	}
 	
 	 isOutsideLeftBoundry(){
@@ -58,11 +58,11 @@ class Player{
 	
 	
 	 getWidth(){
-		return parseInt(this.player.css("offsetWidth"),10); 
+		return parseInt(this.player.width(),10); 
 	}
 	
 	 getHeight(){
-		return parseInt(this.player.css("offsetHeight"),10); 
+		return parseInt(this.player.height(),10); 
 	}
 	
 	 getHealth(){
