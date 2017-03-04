@@ -2,7 +2,7 @@ class boulder
 {
 	constructor(boulderId,gameWindow)
 	{
-		this.boulder = $('#boulder');
+		this.boulder = $(boulderId);
 		this.gameWindow = gameWindow;
 		this.speed = 10;
 	}
