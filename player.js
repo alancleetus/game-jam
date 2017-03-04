@@ -68,4 +68,8 @@ class Player{
 	 getHealth(){
 		return this.health;
 	}
+	
+	decrementHealth(){
+		this.health--;
+	}
 }

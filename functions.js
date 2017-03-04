@@ -5,6 +5,9 @@
 $(document).ready(function(){
 
 document.onkeydown = checkKey;
+document.onkeyup = stopPlayer;
+
+
 var gameWindow =  new GameWindow('gameWindow');
 var mPlayer = new Player($('#player'),gameWindow);
 //var playerDiv =  document.getElementById("player");
@@ -29,21 +32,33 @@ function checkKey(e) {
 	if (e.keyCode == '37') {
        // left arrow
 	   // move player right
+	   //set player to right moving animation
 		mPlayer.moveRight();
 		
 	   //validate that player isn't already out of bounds, if so, move to end of right side
 	   if(mPlayer.isOutsideRightBoundry()){
 		   mPlayer.setToRightSideOfGameWindow();
+	   }else{
+		   //move backgrounds
+		   	$('#parallaxLayer1').css("margin-left", (parseInt($('#parallaxLayer1').css("margin-left"))+3)+'px'   );
+			$('#parallaxLayer2').css("margin-left", (parseInt($('#parallaxLayer2').css("margin-left"))+1)+'px'   );
+	
 	   }
 	  
     }
     else if (e.keyCode == '39') {
        // right arrow
 	   // move player left
+	   //set player to left moving animation
+
 	   mPlayer.moveLeft();
 	    //validate that player isn't already out of bounds, if so, move to end of right side
 	   if(mPlayer.isOutsideLeftBoundry()){
 		   mPlayer.setToLeftSideOfGameWindow();
+	   }else{
+		   	$('#parallaxLayer1').css("margin-left", (parseInt($('#parallaxLayer1').css("margin-left"))-3)+'px'   );
+			$('#parallaxLayer2').css("margin-left", (parseInt($('#parallaxLayer2').css("margin-left"))-1)+'px'   );
+	
 	   }
     }
 
@@ -63,4 +78,12 @@ function checkKey(e) {
 
 }
 
+
+
+
+
+function stopPlayer(){
+	//change player animation to standing still
+
+}
 });
