@@ -5,11 +5,11 @@ class GameWindow{
 		this.gameWindow = $('#'+gameWindowId);
 	}
 	
-	private getWidth(){
-		return gameWindow.width();
+	 getWidth(){
+		return this.gameWindow.width();
 	}
 	
-	private getHeight(){
-		return gameWindow.height();
+	 getHeight(){
+		return this.gameWindow.height();
 	}
 }

@@ -1,21 +1,24 @@
 class Player{
 	
-	constructor(playerId,gameWindow){
-		this.player = $('#'+playerId);
+	
+	constructor(playerSelector,gameWindow){
+		this.player = $("#player");
 		this.gameWindow = gameWindow;
 		this.health = 3;
+
 	}
 	
-	private moveRight(){
-		player.css("marginLeft") = (getLeftMargin() + getSpeed()) + 'px';
+	 moveRight(){
+		this.player.css("margin-left",  ((this.getLeftMargin() + this.getSpeed()) + 'px'));
 	}
 	
-	private moveLeft(){
-		player.css("marginLeft") = (getLeftMargin() - getSpeed()) + 'px';
+	 moveLeft(){
+		this.player.css("margin-left",(this.getLeftMargin() - this.getSpeed()) + 'px');
+
 	}
 	
-	private getSpeed(){
-		switch(getHealth()) {
+	getSpeed(){
+		switch(this.getHealth()) {
 			case 1:
 			   return 30;
 				break;
@@ -30,42 +33,39 @@ class Player{
 		}
 	}
 	
-	private isOutsideRightBoundry(){
+	 isOutsideRightBoundry(){
 		//player leftmargin + player width > game window width
-		return getLeftMargin() + getWidth() > gameWindow.getWidth();			
+		return this.getLeftMargin() + this.getWidth() > this.gameWindow.getWidth();			
 	}
 	
-	private isOutsideLeftBoundry(){
+	 isOutsideLeftBoundry(){
 		//player leftmargin < 0
-		return getLeftMargin() < 0;			
+		return this.getLeftMargin() < 0;			
 	}
 	
-	private setToRightSideOfGameWindow(){
+	 setToRightSideOfGameWindow(){
 		// player left margin = game window width - player width
-		player.css("marginLeft") =  (gameWindow.getWidth() - getWidth()) +'px';
+		this.player.css("margin-left",  (this.gameWindow.getWidth() - this.getWidth()) +'px');
 	}
 	
-	private setToLeftSideOfGameWindow(){
-		player.css("marginLeft") = '0px';
+	 setToLeftSideOfGameWindow(){
+		this.player.css("margin-left",'0px');
 	}
 	
-	private getLeftMargin(){
-		return parseInt(player.css("marginLeft"), 10);
+	 getLeftMargin(){
+		return parseInt(this.player.css("margin-left"));
 	}
 	
-	private getRightMargin(){
-		return parseInt(player.css("marginRight"), 10);
+	
+	 getWidth(){
+		return parseInt(this.player.css("offsetWidth"),10); 
 	}
 	
-	private getWidth(){
-		return parseInt(player.css("offsetWidth"),10); 
+	 getHeight(){
+		return parseInt(this.player.css("offsetHeight"),10); 
 	}
 	
-	private getHeight(){
-		return parseInt(player.css("offsetHeight"),10); 
-	}
-	
-	private getHealth{
+	 getHealth(){
 		return this.health;
 	}
 }

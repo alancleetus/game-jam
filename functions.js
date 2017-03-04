@@ -2,9 +2,11 @@
 //game window. dont want player to move past the screen
 //boulder-player collision
 
+$(document).ready(function(){
+
 document.onkeydown = checkKey;
-var gameWindow =  new GameWindow('gameworld')
-var player = new Player('player',gameWindow);
+var gameWindow =  new GameWindow('gameWindow');
+var mPlayer = new Player($('#player'),gameWindow);
 //var playerDiv =  document.getElementById("player");
 
 //var gameWindow =  document.getElementById("gameWindow");
@@ -23,23 +25,25 @@ function checkKey(e) {
 		// move player up
     }
     else */
+	 console.log(mPlayer.getLeftMargin());
 	if (e.keyCode == '37') {
        // left arrow
 	   // move player right
-		player.moveRight();
+		mPlayer.moveRight();
 		
 	   //validate that player isn't already out of bounds, if so, move to end of right side
-	   if(!player.isOutsideRightBoundry()){
-		   player.setToRightSideOfGameWindow();
+	   if(!mPlayer.isOutsideRightBoundry()){
+		   mPlayer.setToRightSideOfGameWindow();
 	   }
+	  
     }
     else if (e.keyCode == '39') {
        // right arrow
 	   // move player left
-	   player.moveLeft();
+	   mPlayer.moveLeft();
 	    //validate that player isn't already out of bounds, if so, move to end of right side
-	   if(!player.isOutsideLeftBoundry()){
-		   player.setToLeftSideOfGameWindow();
+	   if(!mPlayer.isOutsideLeftBoundry()){
+		   mPlayer.setToLeftSideOfGameWindow();
 	   }
     }
 
@@ -58,3 +62,5 @@ function checkKey(e) {
 	
 
 }
+
+});
