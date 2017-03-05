@@ -1,4 +1,4 @@
-class boulder
+class Boulder
 {
 	constructor(boulderId,gameWindow)
 	{
@@ -7,22 +7,38 @@ class boulder
 		this.speed = 10;
 	}
 	
-	moveUp(){
-		this.player.css("margin-bottom",  ((this.getBottomMargin() + this.getSpeed()) + 'px'));
+	moveUp()
+	{
+		this.boulder.css("margin-top",  ((this.getTopMargin() - this.getSpeed()) + 'px'));
 	}
 	
-	getSpeed(){
+	getSpeed()
+	{
 		return this.speed;
 	}
 	
-	 isOutsideTopBoundry(){
-		//boulder bottom margin > 1000
-		return this.getBottomMargin() > gameWindow.;
+	isOutsideTopBoundry()
+	{
+		return this.getTopMargin() < -this.getHeight();
 	}
 	
 	
-	 getTopMargin(){
-		return parseInt(this.player.css("margin-top"));
+	getTopMargin()
+	{
+		return parseInt(this.boulder.css("margin-top"));
+	}
+	
+	getHeight()
+	{
+		return parseInt(this.boulder.height(),10); 
+	}
+	
+	launch()
+	{
+		while(!isOutsideTopBoundry)
+		{
+			moveUp();
+		}
 	}
 	
 }
