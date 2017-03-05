@@ -84,6 +84,7 @@ function checkKey(e) {
 
 function stopPlayer(){
 	//change player animation to standing still
-
+	$('#player').css("background-image",  "url('./assets/sprites/UpsidedownStanding.gif')");
+	
 }
 });
