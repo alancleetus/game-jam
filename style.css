@@ -57,7 +57,7 @@ html, body
 	background-image:url("./assets/sprites/UpsidedownStanding.gif");
 	height:100px;
 	width:100px;
-	
+	margin-left:450px;
 	position:relative;
 	z-index:2;
 } 
@@ -118,3 +118,28 @@ html, body
 	color:#f9dc24;
 }
 
+
+#giantBoulder
+{
+	margin-left:50px;
+	
+	margin-right:50px;
+	
+	margin-top:800px;
+	height:900px;
+	width:900px;
+	background-image:url("./assets/sprites/Boulder_final.gif");
+	background-repeat:no-repeat;
+	background-position: center; 
+	background-size:900px 900px;
+	
+	position:relative;
+	z-index:2;
+}
+
+#runText
+{
+	position:absolute;
+	justify:center;
+	font-size:75px;
+}
