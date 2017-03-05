@@ -29,7 +29,7 @@ class Player{
 				return 20;
 				break;
 			case 3:
-				return 13;
+				return 8;
 				break;
 			default:
 				return 0;

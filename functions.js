@@ -137,7 +137,10 @@ function  userWon(){
 		console.log(x);
 		if(x){
 			location.reload();
+		}else{
+			clearInterval(scoreIntervalId);
 		}
+			
 	
 	}
 }
