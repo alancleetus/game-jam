@@ -62,12 +62,12 @@ html, body
 	z-index:2;
 } 
 
-#boulder
+.boulder
 {
 	background-color:green;
 	height:100px;
 	width:100px;
-	margin-top:800px;
+	margin-top:900px;
 	
 	position:relative;
 	z-index:2;
@@ -117,3 +117,4 @@ html, body
 {
 	color:#f9dc24;
 }
+
