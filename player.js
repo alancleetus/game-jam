@@ -7,8 +7,9 @@ class Player{
 		this.health = 3;
 
 	}
-	
+
 	 moveRight(){
+
 		this.player.css("margin-left",  ((this.getLeftMargin() + this.getSpeed()) + 'px'));
 		this.player.css("background-image",  "url('./assets/sprites/Upside_down_right.gif')");
 	}
@@ -28,7 +29,7 @@ class Player{
 				return 20;
 				break;
 			case 3:
-				return 10;
+				return 13;
 				break;
 			default:
 				return 0;

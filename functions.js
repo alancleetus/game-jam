@@ -8,19 +8,20 @@ document.onkeydown = checkKey;
 document.onkeyup = stopPlayer;
 
 var score = 0;
-
+var roundNum=1;
 var scoreIntervalId = setInterval(function(){
 	score++;
 	$('#val').text(""+score);
-	console.log(score);
-	}, 1000);
+//console.log(score);
+	}, 200);
+	
+$("#roundVal").text(roundNum);
 	
 var gameWindow =  new GameWindow('gameWindow');
 var mPlayer = new Player($('#player'),gameWindow);
 //var playerDiv =  document.getElementById("player");
-
 //var gameWindow =  document.getElementById("gameWindow");
-
+var keyPressed=false;
 function checkKey(e) {
 	
     e = e || window.event;
@@ -35,8 +36,13 @@ function checkKey(e) {
 		// move player up
     }
     else */
-	 console.log(mPlayer.getLeftMargin());
+	// console.log(mPlayer.getLeftMargin());
 	if (e.keyCode == '37') {
+		if(keyPressed){
+			return;
+		}
+		keyPressed=true;
+
        // left arrow
 	   // move player right
 	   //set player to right moving animation
@@ -46,6 +52,7 @@ function checkKey(e) {
 	   if(mPlayer.isOutsideRightBoundry()){
 		   mPlayer.setToRightSideOfGameWindow();
 	   }else{
+		   
 		   //move backgrounds
 		   	$('#parallaxLayer1').css("margin-left", (parseInt($('#parallaxLayer1').css("margin-left"))+3)+'px'   );
 			$('#parallaxLayer2').css("margin-left", (parseInt($('#parallaxLayer2').css("margin-left"))+1)+'px'   );
@@ -55,6 +62,9 @@ function checkKey(e) {
 	  
     }
     else if (e.keyCode == '39') {
+		if(keyPressed)
+			return;
+		keyPressed=true;
        // right arrow
 	   // move player left
 	   //set player to left moving animation
@@ -86,8 +96,49 @@ function checkKey(e) {
 }
 
 function stopPlayer(){
+	keyPressed=false;
 	//change player animation to standing still
 	$('#player').css("background-image",  "url('./assets/sprites/UpsidedownStanding.gif')");
 	
+}
+
+
+function moveDeathBoulder(){
+	$("#giantBoulder").animate({top: '-1500px'},10000-(roundNum*600), function(){
+		
+userWon();
+		
+	});
+
+	
+
+	
+}
+moveDeathBoulder();
+
+function  userWon(){
+	var playerLeftMargin = mPlayer.getLeftMargin();
+	if(playerLeftMargin >= 900 || playerLeftMargin <= 100){
+		
+		var s=confirm("You WON!. Continue");
+		console.log(s);
+		if(s){
+			roundNum++;
+			$("#roundVal").text(roundNum);
+			$("#giantBoulder").animate({top: '800px'},10);
+			$('#player').css("margin-left","450px");
+
+			moveDeathBoulder();
+		}else{
+			location.reload();
+		}
+	}else{
+		var x =confirm("You LOST! Your score was : "+score+" Would you like to go again?");
+		console.log(x);
+		if(x){
+			location.reload();
+		}
+	
+	}
 }
 });
