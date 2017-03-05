@@ -49,6 +49,7 @@ function checkKey(e) {
 		   //move backgrounds
 		   	$('#parallaxLayer1').css("margin-left", (parseInt($('#parallaxLayer1').css("margin-left"))+3)+'px'   );
 			$('#parallaxLayer2').css("margin-left", (parseInt($('#parallaxLayer2').css("margin-left"))+1)+'px'   );
+			$('#runText').css("margin-left", (parseInt($('#runText').css("margin-left"))+2)+'px'   );
 	
 	   }
 	  
@@ -65,6 +66,7 @@ function checkKey(e) {
 	   }else{
 		   	$('#parallaxLayer1').css("margin-left", (parseInt($('#parallaxLayer1').css("margin-left"))-3)+'px'   );
 			$('#parallaxLayer2').css("margin-left", (parseInt($('#parallaxLayer2').css("margin-left"))-1)+'px'   );
+			$('#runText').css("margin-left", (parseInt($('#runText').css("margin-left"))-2)+'px'   );
 	
 	   }
     }

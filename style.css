@@ -140,6 +140,7 @@ html, body
 #runText
 {
 	position:absolute;
-	justify:center;
+	margin-left:32%;
+	margin-top:40%;
 	font-size:75px;
 }
