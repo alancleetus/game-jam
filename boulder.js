@@ -37,8 +37,14 @@ class Boulder
 	{
 		while(!isOutsideTopBoundry)
 		{
-			moveUp();
+			this.moveUp();
 		}
+		
+		this.destroy();
 	}
 	
+	destroy()
+	{
+		document.getElementById(boulderId).remove();
+	}
 }

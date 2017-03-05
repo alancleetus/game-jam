@@ -101,6 +101,8 @@ html, body
 .gameButtons
 {
 	background-color:rgba(0,0,0,0);
+	border:none;
+	text-transform:uppercase;
 }
 
 .cols
