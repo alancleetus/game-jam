@@ -7,7 +7,9 @@ $(document).ready(function(){
 document.onkeydown = checkKey;
 document.onkeyup = stopPlayer;
 
+var score = 1;
 
+	
 var gameWindow =  new GameWindow('gameWindow');
 var mPlayer = new Player($('#player'),gameWindow);
 //var playerDiv =  document.getElementById("player");
@@ -73,10 +75,9 @@ function checkKey(e) {
 	
 	//after every 5 seconds increase freqency  and increase speed every 7 seconds of boulders
 	
-	
-	
 
 }
+
 
 
 
