@@ -53,7 +53,7 @@ html, body
 
 #player
 {
-	background-color:red;
+	background-image:url("./assets/sprites/Upside_down_right.gif");
 	height:100px;
 	width:100px;
 	
