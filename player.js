@@ -10,6 +10,7 @@ class Player{
 	
 	 moveRight(){
 		this.player.css("margin-left",  ((this.getLeftMargin() + this.getSpeed()) + 'px'));
+		this.player.css("background-image",  "url('./assets/sprites/Upside_down_right.gif')");
 	}
 	
 	 moveLeft(){
