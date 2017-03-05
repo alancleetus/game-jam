@@ -7,8 +7,13 @@ $(document).ready(function(){
 document.onkeydown = checkKey;
 document.onkeyup = stopPlayer;
 
-var score = 1;
+var score = 0;
 
+var scoreIntervalId = setInterval(function(){
+	score++;
+	$('#val').text(""+score);
+	console.log(score);
+	}, 1000);
 	
 var gameWindow =  new GameWindow('gameWindow');
 var mPlayer = new Player($('#player'),gameWindow);
@@ -77,11 +82,6 @@ function checkKey(e) {
 	
 
 }
-
-
-
-
-
 
 function stopPlayer(){
 	//change player animation to standing still

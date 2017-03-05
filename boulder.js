@@ -45,6 +45,6 @@ class Boulder
 	
 	destroy()
 	{
-		document.getElementById(boulderId).remove();
+		document.getElementById(boulder.attr(id)).remove();
 	}
 }
